@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../js/layui-v2.6.2/layui/css/layui.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <from id="myFrom" onsubmit="return checkFrom();" action="">
+        姓名：<input type="text" name="username" id="username" /><br />
+        学号：<input type="text" name="password" id="password" /><br />
+        出生日期： <input type="text" class="layui-input" id="test1">
+        注册：<input type="submit" id="test" />
+
+    </from>
+</body>
+<script type="text/javascript" src="../js/jquery/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/layui-v2.6.2/layui/layui.js"></script>
+<script>
+    layui.use(['layer', 'laydate'], function () {
+        var layer = layui.layer;
+
+        var laydate = layui.laydate;
+        laydate.render({
+            elem: '#test1', //指定元素
+            type: 'datetime'
+        });
+        $(function () {
+            $('#test').click(function () {
+                layer.msg('ffff');
+            })
+        });
+    });
+
+     function checkFrom(){
+         console.log('cccc');
+     var username=$('#username').val();
+
+     if(username == ''  || username == null){
+         alert('用户名称格式错误');
+         return false;
+     }
+    }
+</script>
+
+</html>
